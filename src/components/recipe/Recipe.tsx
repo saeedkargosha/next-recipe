@@ -10,7 +10,9 @@ type RecipeProps = {
 export function Recipe({ recipe }: RecipeProps) {
   const t = useTranslations()
   return (
-    <div className='rounded-xl bg-white shadow-xl'>
+    <div
+      className='rounded-xl bg-white shadow-xl transition ease-in-out delay-75 hover:scale-105'
+      data-testid='recipe'>
       <div className='flex flex-col items-center justify-center p-0 pt-0 relative'>
         <Image
           src={getImageUrl(recipe?.images?.defaultImage?.path)}

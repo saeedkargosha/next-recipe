@@ -15,7 +15,7 @@ export function SearchInput({ className, id, ...rest }: InputProps) {
     <div>
       <div className='relative'>
         <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-          <Search className='w-4 h-4 text-gray-500 ' />
+          <Search className='w-4 h-4 text-gray-500' />
         </div>
         <input type='search' className={inputStyle + ' '} {...rest} />
       </div>

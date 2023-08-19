@@ -10,7 +10,9 @@ type RecipeProps = {
 export function Recipe({ recipe }: RecipeProps) {
   const t = useTranslations()
   return (
-    <div
+    <li
+      role='row'
+      tabIndex={0}
       className='rounded-xl bg-white shadow-xl transition ease-in-out delay-75 hover:scale-105'
       data-testid='recipe'>
       <div className='flex flex-col items-center justify-center p-0 pt-0 relative'>
@@ -38,18 +40,22 @@ export function Recipe({ recipe }: RecipeProps) {
       </div>
       <div className='flex flex-col p-4 pt-0'>
         <div className='flex justify-between items-center gap-4'>
-          <h3 className='my-2 font-semibold truncate text-slate-900 text-ellipsis '>
+          <h3 className='my-2 font-semibold truncate text-slate-900 text-ellipsis'>
             {recipe.title}
           </h3>
           <span className='space-x-1'>
             <span className='text-yellow-400'>{'★'}</span>
-            <span className='text-xs text-neutral-400'>{recipe.rating}</span>
+            <span
+              className='text-xs text-neutral-400'
+              aria-label={`${recipe.rating} ${t('star rating')}`}>
+              {recipe.rating}
+            </span>
           </span>
         </div>
         <p className='text-sm line-clamp-3 text-slate-700'>
           {recipe.description}
         </p>
       </div>
-    </div>
+    </li>
   )
 }

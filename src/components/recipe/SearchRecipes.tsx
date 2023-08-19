@@ -30,12 +30,14 @@ export function SearchRecipes({ children }: PropsWithChildren) {
         onChange={handleChange}
         defaultValue={searchQuery ?? ''}
       />
-      <div
+      <ul
+        role='grid'
+        tabIndex={-1}
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8'
         data-testid='recipts'>
         {!hasSearch && children}
         <LoadMoreRecipes query={searchQuery} />
-      </div>
+      </ul>
     </section>
   )
 }

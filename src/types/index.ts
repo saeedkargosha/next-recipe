@@ -22,7 +22,7 @@ export interface RecipeQuery {
 }
 
 export interface RecipeInput {
-  query?: string
+  query?: string | null
   page: number
   pageSize: number
 }

@@ -1,2 +1,2 @@
-export { LoadMoreReceipts } from './LoadMoreReceipts'
 export { Receipts } from './Receipts'
+export { SearchReceipts } from './SearchReceipts'

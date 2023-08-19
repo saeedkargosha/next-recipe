@@ -7,14 +7,11 @@ import { Receipts } from './Receipts'
 import { useLoadMoreReceipt } from './useLoadMoreReceipt'
 import type { LoadMoreReceiptOptions } from './useLoadMoreReceipt'
 
-export function LoadMoreReceipts({
-  query,
-  initialPage,
-}: LoadMoreReceiptOptions) {
+export function LoadMoreReceipts(props: LoadMoreReceiptOptions) {
   const { handlePage, isEnded, receipts } = useLoadMoreReceipt({
-    query,
-    initialPage,
+    ...props,
   })
+
   const { ref, inView } = useInView({
     skip: isEnded,
   })
@@ -32,7 +29,7 @@ export function LoadMoreReceipts({
       <div
         className='flex justify-center items-center p-4 col-span-1 sm:col-span-2 md:col-span-3'
         ref={ref}>
-        {isEnded ? <div>{'End of lists'}</div> : <Spinner />}
+        {!isEnded && <Spinner />}
       </div>
     </>
   )

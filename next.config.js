@@ -10,8 +10,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: process.env.REMOTE_PROTOCOL,
-        hostname: process.env.REMOTE_HOSTNAME,
+        protocol: process.env.NEXT_PUBLIC_REMOTE_PROTOCOL,
+        hostname: process.env.NEXT_PUBLIC_REMOTE_HOSTNAME,
       },
     ],
   },

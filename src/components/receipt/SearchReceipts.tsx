@@ -6,8 +6,10 @@ import { useSearchParams } from 'next/navigation'
 import { LoadMoreReceipts } from './LoadMoreReceipts'
 import { ChangeEvent, PropsWithChildren } from 'react'
 import { SearchInput } from '@/uikit'
+import { useTranslations } from 'next-intl'
 
 export function SearchReceipts({ children }: PropsWithChildren) {
+  const t = useTranslations()
   const updateQueryParam = useUpdateQuery()
   const searchParams = useSearchParams()
   const handleChange = useDebounce(
@@ -22,7 +24,7 @@ export function SearchReceipts({ children }: PropsWithChildren) {
   return (
     <section className='container mx-auto px-4 min-h-screen max-w-5xl'>
       <SearchInput
-        placeholder='Search'
+        placeholder={t('Search')}
         onChange={handleChange}
         defaultValue={searchQuery ?? ''}
       />

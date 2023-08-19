@@ -1,12 +1,14 @@
 import { getImageUrl, getPlaceholder } from '@/lib/utils'
 import { Recipe } from '@/types'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 type ReceiptProps = {
   receipt: Recipe
 }
 
 export function Receipt({ receipt }: ReceiptProps) {
+  const t = useTranslations()
   return (
     <div className='rounded-xl bg-white shadow-xl'>
       <div className='flex flex-col items-center justify-center p-0 pt-0 relative'>
@@ -24,7 +26,7 @@ export function Receipt({ receipt }: ReceiptProps) {
         <div className='absolute bottom-4 left-4 rounded-lg bg-white'>
           <div className='flex flex-col p-4 gap-2 rounded-lg backdrop-blur-3xl'>
             <span className='uppercase text-sm font-semibold text-slate-900'>
-              {'Satiety'}
+              {t('Satiety')}
             </span>
             <span className='text-3xl font-semibold text-slate-900'>
               {receipt.satietyScore ? Math.round(receipt.satietyScore) : 0}

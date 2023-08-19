@@ -1,7 +1,7 @@
 import { IMAGE_API_URL } from '@/configs'
 
 export function getImageUrl(path: string) {
-  return `${IMAGE_API_URL}/${path}`
+  return `${IMAGE_API_URL}${path}`
 }
 
 export function getPlaceholder() {

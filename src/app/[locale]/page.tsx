@@ -1,6 +1,6 @@
 import { fetchRecipes } from '@/actions/fetch-recipes'
 import { Header } from '@/components/Header'
-import { Receipts, SearchReceipts } from '@/components/receipt'
+import { Recipes, SearchRecipes } from '@/components/recipe'
 
 export default async function Home() {
   const recipes = await fetchRecipes({ page: 1, pageSize: 10 })
@@ -8,9 +8,9 @@ export default async function Home() {
   return (
     <main className='min-h-screen'>
       <Header />
-      <SearchReceipts>
-        <Receipts receipts={recipes.data.listRecipes.recipes} />
-      </SearchReceipts>
+      <SearchRecipes>
+        <Recipes recipes={recipes.data.listRecipes.recipes} />
+      </SearchRecipes>
     </main>
   )
 }

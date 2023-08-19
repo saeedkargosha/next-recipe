@@ -3,12 +3,12 @@
 import { useDebounce } from '@/hooks/useDebounce'
 import { useUpdateQuery } from '@/hooks/useUpdateQuery'
 import { useSearchParams } from 'next/navigation'
-import { LoadMoreReceipts } from './LoadMoreReceipts'
+import { LoadMoreRecipes } from './LoadMoreRecipes'
 import { ChangeEvent, PropsWithChildren } from 'react'
 import { SearchInput } from '@/uikit'
 import { useTranslations } from 'next-intl'
 
-export function SearchReceipts({ children }: PropsWithChildren) {
+export function SearchRecipes({ children }: PropsWithChildren) {
   const t = useTranslations()
   const updateQueryParam = useUpdateQuery()
   const searchParams = useSearchParams()
@@ -30,7 +30,7 @@ export function SearchReceipts({ children }: PropsWithChildren) {
       />
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8'>
         {!hasSearch && children}
-        <LoadMoreReceipts query={searchQuery} />
+        <LoadMoreRecipes query={searchQuery} />
       </div>
     </section>
   )

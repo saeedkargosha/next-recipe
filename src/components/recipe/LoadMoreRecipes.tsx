@@ -3,12 +3,12 @@
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Spinner } from '@/uikit'
-import { Receipts } from './Receipts'
-import { useLoadMoreReceipt } from './useLoadMoreReceipt'
-import type { LoadMoreReceiptOptions } from './useLoadMoreReceipt'
+import { Recipes } from './Recipes'
+import { useLoadMoreRecipes } from './useLoadMoreRecipes'
+import type { LoadMoreRecipeOptions } from './useLoadMoreRecipes'
 
-export function LoadMoreReceipts(props: LoadMoreReceiptOptions) {
-  const { handlePage, isEnded, receipts } = useLoadMoreReceipt({
+export function LoadMoreRecipes(props: LoadMoreRecipeOptions) {
+  const { handlePage, isEnded, recipes } = useLoadMoreRecipes({
     ...props,
   })
 
@@ -25,7 +25,7 @@ export function LoadMoreReceipts(props: LoadMoreReceiptOptions) {
 
   return (
     <>
-      <Receipts receipts={receipts} />
+      <Recipes recipes={recipes} />
       <div
         className='flex justify-center items-center p-4 col-span-1 sm:col-span-2 md:col-span-3'
         ref={ref}>

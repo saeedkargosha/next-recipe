@@ -1,4 +1,3 @@
-import '../globals.css'
 import { Inter } from 'next/font/google'
 import { useLocale, useMessages, NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'

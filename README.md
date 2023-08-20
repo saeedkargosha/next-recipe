@@ -14,6 +14,7 @@ Live demo: https://next-recipe-five.vercel.app
 - Great performance and Accessibility
 - Responsive
 - UI Components
+- Github Action
 
 ## Built with
 

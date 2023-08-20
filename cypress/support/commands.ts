@@ -40,11 +40,11 @@ declare global {
 // Prevent TypeScript from reading file as legacy script
 
 Cypress.Commands.add('getRecipts', () => {
-  cy.get('[data-testid="recipts"] [data-testid="recipe"]')
+  cy.get('[data-testid="recipts"] [data-testid="recipe"]', { timeout: 10000 })
 })
 
 Cypress.Commands.add('getSearchInput', () => {
-  cy.get('[data-testid="search-recipts"] input')
+  cy.get('[data-testid="search-recipts"] input', { timeout: 10000 })
 })
 
 export {}

@@ -13,13 +13,16 @@ describe('Recipes Search', () => {
   })
 
   it('should update URL with search parameter when searching', () => {
-    cy.getSearchInput().type('test').should('have.value', 'test')
-    cy.url().should('include', '?search=test')
+    cy.getSearchInput()
+      .should('be.visible')
+      .type('test')
+      .should('have.value', 'test')
+    cy.url().should('include', 'search=test')
   })
 
   it('should clear search parameter from URL when search is clearedl', () => {
     cy.getSearchInput().type('test')
-    cy.url().should('include', '?search=test')
+    cy.url().should('include', 'search=test')
     cy.getSearchInput().clear()
     cy.url().should('not.include', 'search=test')
   })

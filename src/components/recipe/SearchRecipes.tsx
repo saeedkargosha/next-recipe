@@ -22,22 +22,23 @@ export function SearchRecipes({ children }: PropsWithChildren) {
   const hasSearch = searchQuery && searchQuery.length > 0
 
   return (
-    <section
+    <div
       className='container mx-auto px-4 min-h-screen max-w-5xl'
       data-testid='search-recipts'>
       <SearchInput
         placeholder={t('Search')}
         onChange={handleChange}
         defaultValue={searchQuery ?? ''}
+        aria-label={t('Search')}
       />
       <ul
-        role='grid'
-        tabIndex={-1}
+        role='list'
+        aria-label={t('recipes')}
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8'
         data-testid='recipts'>
         {!hasSearch && children}
         <LoadMoreRecipes query={searchQuery} />
       </ul>
-    </section>
+    </div>
   )
 }

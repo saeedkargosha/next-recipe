@@ -5,5 +5,15 @@
   "Appetite for life": "Appétit de vivre",
   "Satiety": "Satiété",
   "Search": "Recherche",
-  "star rating": "Évaluation étoilée"
+  "star rating": "Évaluation étoilée",
+  "recipes": "recettes",
+  "NotFoundPage": {
+    "title": "Page introuvable",
+    "description": "Veuillez vérifier la barre d'adresse du navigateur ou utiliser la navigation pour accéder à une page d'accueil.",
+    "Home page": "Page d'accueil"
+  },
+  "Error": {
+    "title": "Quelque chose s'est mal passé !",
+    "description": "Nous avons malheureusement rencontré une erreur. Vous pouvez essayer de <retry>recharger la page que vous visitiez."
+  }
 }

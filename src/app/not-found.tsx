@@ -1,21 +1,13 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Not Found',
-  description: 'Not Found',
-}
+import Error from 'next/error'
 
 export default function NotFound() {
   return (
-    <div className='w-full min-h-screen flex flex-col justify-center items-center space-y-4'>
-      <h4 className='text-2xl text-neutral-800'>404. Page not found</h4>
-      <p className='text-xl text-red-500'>
-        Sorry, we couldn&apos;t find this page.
-      </p>
-      <p>
-        View <Link href='/'>Home page</Link>
-      </p>
-    </div>
+    <html lang='en'>
+      <body>
+        <Error statusCode={404} />
+      </body>
+    </html>
   )
 }

@@ -11,7 +11,7 @@ export function Recipe({ recipe }: RecipeProps) {
   const t = useTranslations()
   return (
     <li
-      role='row'
+      role='listitem'
       tabIndex={0}
       className='rounded-xl bg-white shadow-xl transition ease-in-out delay-75 hover:scale-105'
       data-testid='recipe'>
@@ -25,6 +25,7 @@ export function Recipe({ recipe }: RecipeProps) {
           width={500}
           height={750}
           placeholder='blur'
+          aria-hidden={true}
           blurDataURL={getPlaceholder()}
         />
         <div className='absolute bottom-4 left-4 rounded-lg bg-white'>
@@ -44,7 +45,9 @@ export function Recipe({ recipe }: RecipeProps) {
             {recipe.title}
           </h3>
           <span className='space-x-1'>
-            <span className='text-yellow-400'>{'★'}</span>
+            <span aria-hidden='true' className='text-yellow-400'>
+              {'★'}
+            </span>
             <span
               className='text-xs text-neutral-400'
               aria-label={`${recipe.rating} ${t('star rating')}`}>

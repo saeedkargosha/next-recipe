@@ -4,5 +4,15 @@
   "Appetite for life": "Appetite for life",
   "Satiety": "Satiety",
   "Search": "Search",
-  "star rating": "star rating"
+  "star rating": "star rating",
+  "recipes": "recipes",
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a home page.",
+    "Home page": "Home page"
+  },
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "<p>We've unfortunately encountered an error. You can try to reload the page you were visiting."
+  }
 }

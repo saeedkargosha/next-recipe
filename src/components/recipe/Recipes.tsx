@@ -10,7 +10,13 @@ export function Recipes({ recipes }: RecipesProps) {
   const t = useTranslations()
 
   if (!recipes) {
-    return <div className='text-xl font-bold'>{t('No Recipes available')}</div>
+    return (
+      <div
+        aria-errormessage={t('No Recipes available')}
+        className='text-xl font-bold'>
+        {t('No Recipes available')}
+      </div>
+    )
   }
 
   return recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />)

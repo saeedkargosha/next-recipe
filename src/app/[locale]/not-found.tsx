@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -7,14 +8,13 @@ export const metadata: Metadata = {
 }
 
 export default function NotFound() {
+  const t = useTranslations('NotFoundPage')
   return (
     <div className='w-full min-h-screen flex flex-col justify-center items-center space-y-4'>
-      <h4 className='text-2xl text-neutral-800'>404. Page not found</h4>
-      <p className='text-xl text-red-500'>
-        Sorry, we couldn&apos;t find this page.
-      </p>
+      <h2 className='text-2xl text-neutral-800'>{t('title')}</h2>
+      <p className='text-xl text-red-500'>{t('description')}</p>
       <p>
-        View <Link href='/'>Home page</Link>
+        <Link href='/'>{t('Home page')}</Link>
       </p>
     </div>
   )

@@ -17,3 +17,8 @@ jobs:
         with:
           build: npm run build
           start: npm start
+        env:
+          NEXT_PUBLIC_GRAPHQL_API_URL: ${{ secrets.GRAPHQL_API_URL }}
+          NEXT_PUBLIC_IAMGE_API_URL: ${{ secrets.IAMGE_API_URL }}
+          NEXT_PUBLIC_REMOTE_PROTOCOL: ${{ secrets.PROTOCOL }}
+          NEXT_PUBLIC_REMOTE_HOSTNAME: ${{ secrets.HOSTNAME }}

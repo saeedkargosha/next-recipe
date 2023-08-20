@@ -40,7 +40,8 @@ describe('Load More', () => {
 
   it('should display 10 recipes initially and 20 after scrolling', () => {
     cy.getRecipts().should('have.length', 10)
-    cy.getRecipts().last().scrollIntoView()
+    cy.window().scrollTo('bottom')
+    cy.wait(10000)
     cy.getRecipts().should('have.length', 20)
   })
 })

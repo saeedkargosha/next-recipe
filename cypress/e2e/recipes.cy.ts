@@ -21,14 +21,14 @@ describe('Recipes Search', () => {
   })
 
   it('should clear search parameter from URL when search is clearedl', () => {
-    cy.getSearchInput().type('test')
+    cy.getSearchInput().should('be.visible').type('test')
     cy.url().should('include', 'search=test')
-    cy.getSearchInput().clear()
+    cy.getSearchInput().should('be.visible').clear()
     cy.url().should('not.include', 'search=test')
   })
 
   it('should show no recipes when search does not match', () => {
-    cy.getSearchInput().type('test321124')
+    cy.getSearchInput().should('be.visible').type('test321124')
     cy.getRecipts().should('have.length', 0)
   })
 })

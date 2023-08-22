@@ -15,6 +15,7 @@ Live demo: https://next-recipe-five.vercel.app
 - Responsive
 - UI Components
 - Github Action
+- Loading Skeleton and Streaming
 
 ## Built with
 
